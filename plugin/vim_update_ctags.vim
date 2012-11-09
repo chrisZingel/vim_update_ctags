@@ -23,6 +23,7 @@ let g:load_vim_update_ctags = "true"
 
 function! LoadCtagsRails()
   :ruby LoadCtagsRails.new
+  :echo "Completed..."
 endfunction
 
 command LoadCtagsRails :call LoadCtagsRails()
@@ -34,9 +35,8 @@ ruby << EOF
 		end
 
     def update_ctags
-      vimputs("this can take a while ...")
+      vimputs("This can take a while ...")
       system("ctags -R --exclude=.git --exclude=log --exclude=*.js * #{gem_path}")
-      vimputs("successfully updating ctags included gem directory #{gem_path}")
     end
 
     def gem_path
