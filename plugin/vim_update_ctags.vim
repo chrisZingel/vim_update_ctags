@@ -36,7 +36,8 @@ ruby << EOF
 
     def update_ctags
       vimputs("This can take a while ...")
-      system("ctags -R --exclude=.git --exclude=log --exclude=*.js * #{gem_path}")
+      # system("ctags -R --exclude=.git --exclude=log --exclude=*.js * #{gem_path}/bundler #{gem_path}")
+      system("ctags -R --exclude=.git --exclude=log --exclude=*.js *  #{gem_path}")
     end
 
     def gem_path
